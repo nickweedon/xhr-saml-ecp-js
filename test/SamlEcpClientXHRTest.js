@@ -15,7 +15,8 @@ describe('BlockingRequestQueueXHR Test', function() {
 
     afterEach(function () {
         xhrAdaptorJs.manager.resetXHR();
-        xhrSamlEcpJs.SamlEcpClientXHR.clearResponseHandlers();
+        //TODO: Look at a proper method for clearing handlers
+        //xhrSamlEcpJs.SamlEcpClientXHR.clearResponseHandlers();
     });
 
     it("Can instantiate successfully", function () {

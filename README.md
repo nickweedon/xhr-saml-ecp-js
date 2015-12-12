@@ -1,5 +1,5 @@
-xhr-blocking-queue-js
-=================
+xhr-saml-ecp-js
+===============
 
 Building
 --------
