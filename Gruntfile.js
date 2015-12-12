@@ -81,6 +81,23 @@ module.exports = function(grunt) {
 			unit: {
 				configFile: 'karma.conf.js'
 			}
+		},
+		express: {
+			options: {
+				// Override defaults here
+			},
+			testserver: {
+				options: {
+					script: 'test/MockIdpServer/app.js'
+				}
+			}
+		},
+		forever: {
+			testserver: {
+				options: {
+					index: 'test/MockIdpServer/app.js'
+				}
+			}
 		}
 	});
 
@@ -92,6 +109,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-karma');
 	grunt.loadNpmTasks('grunt-jsdoc');
+	grunt.loadNpmTasks('grunt-express-server');
+	grunt.loadNpmTasks('grunt-forever');
 	
 	// Default task(s).
 	grunt.registerTask('default', ['jshint', 'includereplace', 'copy', 'jsdoc', 'uglify']);
@@ -103,6 +122,6 @@ module.exports = function(grunt) {
 		grunt.log.writeln("Manual test page is available at http://127.0.0.1:" + port +  "/test/server/");
 	});
 	grunt.registerTask('test-server', 'Run a test server for manual testing/playing', ['default', 'bower-install-simple', 'connect']);
-	grunt.registerTask('test', 'Run the unit test suite', ['bower-install-simple', 'karma']);
+	grunt.registerTask('test', 'Run the unit test suite', ['bower-install-simple', 'express:testserver', 'karma']);
 	grunt.registerTask('doc', ['compile', 'jsdoc']);
 };

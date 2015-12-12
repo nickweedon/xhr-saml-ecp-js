@@ -23,4 +23,17 @@ describe('SamlEcpClientXHR Test', function() {
         var xhr = new xhrSamlEcpJs.SamlEcpClientXHR(xhrTestUtils.createNativeXhr());
         assert.ok( xhr !== undefined, "Failed to instantiate xhrSamlEcpJs.SamlEcpClientXHR" );
     });
+
+    it("Can talk to dummy server", function (done) {
+       var xhr = new XMLHttpRequest();
+
+        xhr.open("get", "http://localhost:3000");
+        xhr.onreadystatechange = function() {
+          if(this.readyState == 4) {
+              assert.equal(this.responseText, "Hello World!");
+              done();
+          }
+        };
+        xhr.send();
+    });
 });
