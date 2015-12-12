@@ -1,4 +1,4 @@
-describe('BlockingRequestQueueXHR Test', function() {
+describe('SamlEcpClientXHR Test', function() {
 
     var xhrSamlEcpJs = null;
     var xhrAdaptorJs = null;
