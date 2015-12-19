@@ -64,19 +64,6 @@ module.exports = function(grunt) {
                 }
 	        }
 	    },	    
-	    connect: {
-	    	server: {
-	    	      options: {
-	    	    	keepalive: true,
-	    	        port: 8020
-	    	      }
-	    	},
-	    	unittest: {
-	    	      options: {
-		    	        port: 8020
-	    	      }
-	    	}
-	    },
 		karma: {
 			unit: {
 				configFile: 'karma.conf.js'
@@ -86,16 +73,30 @@ module.exports = function(grunt) {
 			options: {
 				// Override defaults here
 			},
-			testserver: {
+			idpserver: {
 				options: {
-					script: 'test/MockIdpServer/app.js'
+					script: 'test/mock_server/MockIdpServer.js'
+				}
+			},
+			spserver: {
+				options: {
+					script: 'test/mock_server/MockSpServer.js'
 				}
 			}
 		},
 		forever: {
-			testserver: {
+			idpserver: {
 				options: {
-					index: 'test/MockIdpServer/app.js'
+					index : 'test/mock_server/MockIdpServer.js',
+					logDir : 'mock_server_log',
+					outFile : 'idp_server.log'
+				}
+			},
+			spserver: {
+				options: {
+					index: 'test/mock_server/MockSpServer.js',
+					logDir : 'mock_server_log',
+					outFile : 'sp_server.log'
 				}
 			}
 		}
@@ -104,7 +105,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks("grunt-bower-install-simple");
-	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-include-replace');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-karma');
@@ -121,7 +121,8 @@ module.exports = function(grunt) {
 		grunt.log.writeln("Unit test pages is available at http://127.0.0.1:" + port +  "/test/unit/");
 		grunt.log.writeln("Manual test page is available at http://127.0.0.1:" + port +  "/test/server/");
 	});
-	grunt.registerTask('test-server', 'Run a test server for manual testing/playing', ['default', 'bower-install-simple', 'connect']);
-	grunt.registerTask('test', 'Run the unit test suite', ['bower-install-simple', 'express:testserver', 'karma']);
+	grunt.registerTask('test', 'Run the unit test suite', ['bower-install-simple', 'express:idpserver', 'express:spserver', 'karma']);
+    grunt.registerTask('startServers', 'Start the mock servers', ['forever:idpserver:restart', 'forever:spserver:restart']);
+    grunt.registerTask('stopServers', 'Start the mock servers', ['forever:idpserver:stop', 'forever:spserver:stop']);
 	grunt.registerTask('doc', ['compile', 'jsdoc']);
 };
