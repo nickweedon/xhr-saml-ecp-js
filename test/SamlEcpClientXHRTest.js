@@ -113,8 +113,7 @@ describe('SamlEcpClientXHR Test', function() {
                         onSamlTimeout: onSamlTimeoutCallback,
                         onResourceTimeout: onResourceTimeoutCallback
                     }
-                }
-                ]
+                }]
             });
 
             xhrAdaptorJs.manager.injectWrapper(xhrSamlEcpJs.SamlEcpClientXHR);

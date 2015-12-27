@@ -56,8 +56,8 @@
       <file leaf-file-name="SamlEcpXhr.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SamlEcpXhr.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.481482">
-              <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+            <state vertical-scroll-proportion="-9.592592">
+              <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -66,58 +66,8 @@
       <file leaf-file-name="SamlEcpClientXHRTest.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/SamlEcpClientXHRTest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9713805">
-              <caret line="117" column="15" selection-start-line="117" selection-start-column="15" selection-end-line="117" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="xhr-adaptor-js.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bower_components/xhr-adaptor-js/dist/xhr-adaptor-js.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="369" column="3" selection-start-line="369" selection-start-column="0" selection-end-line="369" selection-end-column="0" />
-              <folding>
-                <marker date="1451221741343" expanded="true" signature="62:349" placeholder="/** For the AMD module version of the library, the xhrAdaptorJs namespace ...*/" />
-                <marker date="1451221741343" expanded="true" signature="392:1253" placeholder="/** This constructor is used internally and is not publicly available outside of the ...*/" />
-                <marker date="1451221741343" expanded="true" signature="1351:1830" placeholder="/** This method is used to invoke the real handler, using the {@link xhrAdaptorJs.XHRWrapper} ...*/" />
-                <marker date="1451221741343" expanded="true" signature="1937:2486" placeholder="/** This method is used to invoke the real handler, using the {@link xhrAdaptorJs.XHRWrapper} ...*/" />
-                <marker date="1451221741343" expanded="true" signature="2601:2873" placeholder="/** This read-only property provides access to the {@link xhrAdaptorJs.XHRWrapper} derived object. ...*/" />
-                <marker date="1451221741343" expanded="true" signature="2980:3670" placeholder="/** The PropMethodFactoryBase constructor ...*/" />
-                <marker date="1451221741343" expanded="true" signature="3711:4165" placeholder="/** Convenience method that is used to return the prototype of the parent class. ...*/" />
-                <marker date="1451221741343" expanded="true" signature="4285:4512" placeholder="/** Create a method invoking function for the specified method ...*/" />
-                <marker date="1451221741343" expanded="true" signature="4690:4905" placeholder="/** Create a property getter function for the specified property ...*/" />
-                <marker date="1451221741343" expanded="true" signature="5079:5294" placeholder="/** Create a property setter function for the specified property ...*/" />
-                <marker date="1451221741343" expanded="true" signature="5473:6220" placeholder="/** This method checks to see if a delegate is defined for the property and if so, ...*/" />
-                <marker date="1451221741343" expanded="true" signature="7916:8139" placeholder="/** Return the specified property from the object ...*/" />
-                <marker date="1451221741343" expanded="true" signature="8274:8530" placeholder="/** Set the specified property on the object ...*/" />
-                <marker date="1451221741343" expanded="true" signature="8672:8958" placeholder="/** Invoke the specified method on the object ...*/" />
-                <marker date="1451221741343" expanded="true" signature="9098:10086" placeholder="/** Set an event based property by assigning the delegate function that in turn will call ...*/" />
-                <marker date="1451221741343" expanded="true" signature="10260:10638" placeholder="/** This factory creates accessors, setters and methods that simply directly call the ...*/" />
-                <marker date="1451221741343" expanded="true" signature="11571:12063" placeholder="/** This factory creates accessors, setters and methods that call into an ActiveX based ...*/" />
-                <marker date="1451221741343" expanded="true" signature="13250:13428" placeholder="/** This function dynamically derives a debug class from the specified base class ...*/" />
-                <marker date="1451221741343" expanded="true" signature="15391:15507" placeholder="/** This is a classic GoF builder that uses the provided abstract factory ...*/" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bower_components/jquery/dist/jquery.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8604" column="8" selection-start-line="8604" selection-start-column="8" selection-end-line="8604" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test-require-deps.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/test-require-deps.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="72" selection-start-line="18" selection-start-column="72" selection-end-line="18" selection-end-column="72" />
+            <state vertical-scroll-proportion="0.4276094">
+              <caret line="112" column="61" selection-start-line="112" selection-start-column="61" selection-end-line="112" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -127,27 +77,7 @@
         <entry file="file://$PROJECT_DIR$/dist/xhr-saml-ecp-js.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="98" column="57" selection-start-line="98" selection-start-column="57" selection-end-line="98" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="saml-ecp-client-js.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bower_components/saml-ecp-client-js/dist/saml-ecp-client-js.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="639" column="4" selection-start-line="639" selection-start-column="4" selection-end-line="639" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="karma.conf.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/karma.conf.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="73" column="4" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
+              <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -214,11 +144,11 @@
         <option value="$PROJECT_DIR$/test/test-require-deps.js" />
         <option value="$PROJECT_DIR$/test/mock_server/MockSpServer.js" />
         <option value="$PROJECT_DIR$/test/mock_server/MockIdpServer.js" />
-        <option value="$PROJECT_DIR$/dist/xhr-saml-ecp-js.js" />
         <option value="$PROJECT_DIR$/bower_components/saml-ecp-client-js/dist/saml-ecp-client-js.js" />
         <option value="$PROJECT_DIR$/src/SamlEcpXhr.js" />
-        <option value="$PROJECT_DIR$/test/SamlEcpClientXHRTest.js" />
         <option value="$PROJECT_DIR$/karma.conf.js" />
+        <option value="$PROJECT_DIR$/dist/xhr-saml-ecp-js.js" />
+        <option value="$PROJECT_DIR$/test/SamlEcpClientXHRTest.js" />
       </list>
     </option>
   </component>
@@ -484,46 +414,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xhr-saml-ecp-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xhr-saml-ecp-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saml-ecp-client-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xhr-saml-ecp-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xhr-saml-ecp-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saml-ecp-client-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="dist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -785,15 +675,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Tests - 2015.12.27 at 18h 06m 32s.xml">
-      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
-    <history-entry file="All_Tests - 2015.12.27 at 18h 08m 14s.xml">
-      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
-    <history-entry file="All_Tests - 2015.12.27 at 18h 08m 58s.xml">
-      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
     <history-entry file="All_Tests - 2015.12.27 at 18h 09m 15s.xml">
       <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
@@ -815,6 +696,15 @@
     <history-entry file="All_Tests - 2015.12.27 at 23h 09m 11s.xml">
       <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
+    <history-entry file="All_Tests - 2015.12.27 at 23h 20m 15s.xml">
+      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="All_Tests - 2015.12.27 at 23h 32m 05s.xml">
+      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="All_Tests - 2015.12.27 at 23h 32m 24s.xml">
+      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
@@ -827,7 +717,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.50479746" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32683983" sideWeight="0.49520257" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32683983" sideWeight="0.49520257" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16239317" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -858,17 +748,12 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/dist/xhr-saml-ecp-js.js</url>
-          <line>58</line>
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/bower_components/saml-ecp-client-js/dist/saml-ecp-client-js.js</url>
           <line>517</line>
           <option name="timeStamp" value="85" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="92" />
+      <option name="time" value="94" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JavaScriptTestRunnerKarma">
@@ -1192,14 +1077,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/xhr-saml-ecp-js.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="98" column="57" selection-start-line="98" selection-start-column="57" selection-end-line="98" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/test-require-deps.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1216,14 +1093,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bower_components/saml-ecp-client-js/dist/saml-ecp-client-js.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="639" column="4" selection-start-line="639" selection-start-column="4" selection-end-line="639" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bower_components/jquery/dist/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1236,42 +1105,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="369" column="3" selection-start-line="369" selection-start-column="0" selection-end-line="369" selection-end-column="0" />
-          <folding>
-            <marker date="1451221741343" expanded="true" signature="62:349" placeholder="/** For the AMD module version of the library, the xhrAdaptorJs namespace ...*/" />
-            <marker date="1451221741343" expanded="true" signature="392:1253" placeholder="/** This constructor is used internally and is not publicly available outside of the ...*/" />
-            <marker date="1451221741343" expanded="true" signature="1351:1830" placeholder="/** This method is used to invoke the real handler, using the {@link xhrAdaptorJs.XHRWrapper} ...*/" />
-            <marker date="1451221741343" expanded="true" signature="1937:2486" placeholder="/** This method is used to invoke the real handler, using the {@link xhrAdaptorJs.XHRWrapper} ...*/" />
-            <marker date="1451221741343" expanded="true" signature="2601:2873" placeholder="/** This read-only property provides access to the {@link xhrAdaptorJs.XHRWrapper} derived object. ...*/" />
-            <marker date="1451221741343" expanded="true" signature="2980:3670" placeholder="/** The PropMethodFactoryBase constructor ...*/" />
-            <marker date="1451221741343" expanded="true" signature="3711:4165" placeholder="/** Convenience method that is used to return the prototype of the parent class. ...*/" />
-            <marker date="1451221741343" expanded="true" signature="4285:4512" placeholder="/** Create a method invoking function for the specified method ...*/" />
-            <marker date="1451221741343" expanded="true" signature="4690:4905" placeholder="/** Create a property getter function for the specified property ...*/" />
-            <marker date="1451221741343" expanded="true" signature="5079:5294" placeholder="/** Create a property setter function for the specified property ...*/" />
-            <marker date="1451221741343" expanded="true" signature="5473:6220" placeholder="/** This method checks to see if a delegate is defined for the property and if so, ...*/" />
-            <marker date="1451221741343" expanded="true" signature="7916:8139" placeholder="/** Return the specified property from the object ...*/" />
-            <marker date="1451221741343" expanded="true" signature="8274:8530" placeholder="/** Set the specified property on the object ...*/" />
-            <marker date="1451221741343" expanded="true" signature="8672:8958" placeholder="/** Invoke the specified method on the object ...*/" />
-            <marker date="1451221741343" expanded="true" signature="9098:10086" placeholder="/** Set an event based property by assigning the delegate function that in turn will call ...*/" />
-            <marker date="1451221741343" expanded="true" signature="10260:10638" placeholder="/** This factory creates accessors, setters and methods that simply directly call the ...*/" />
-            <marker date="1451221741343" expanded="true" signature="11571:12063" placeholder="/** This factory creates accessors, setters and methods that call into an ActiveX based ...*/" />
-            <marker date="1451221741343" expanded="true" signature="13250:13428" placeholder="/** This function dynamically derives a debug class from the specified base class ...*/" />
-            <marker date="1451221741343" expanded="true" signature="15391:15507" placeholder="/** This is a classic GoF builder that uses the provided abstract factory ...*/" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SamlEcpXhr.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.481482">
-          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+        <state vertical-scroll-proportion="-9.592592">
+          <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower_components/saml-ecp-client-js/dist/saml-ecp-client-js.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36531988">
+          <caret line="668" column="39" selection-start-line="668" selection-start-column="37" selection-end-line="668" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/xhr-saml-ecp-js.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/SamlEcpClientXHRTest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9713805">
-          <caret line="117" column="15" selection-start-line="117" selection-start-column="15" selection-end-line="117" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.4276094">
+          <caret line="112" column="61" selection-start-line="112" selection-start-column="61" selection-end-line="112" selection-end-column="61" />
           <folding />
         </state>
       </provider>
