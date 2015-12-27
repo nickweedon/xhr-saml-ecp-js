@@ -45,8 +45,8 @@ SamlTestData.PAOS_REQUEST_WITHOUT_HEADER =
 SamlTestData.createPAOSRequest = function (fieldValues) {
 
     var fields = uscore.defaults(fieldValues || {}, {
-        responseConsumerURL : SamlTestData.SP_RESOURCE_URL + '/saml/SSO',
-        assertionConsumerServiceURL : SamlTestData.SP_RESOURCE_URL + '/saml/SSO',
+        responseConsumerURL : SamlTestData.SP_BASE_URL + '/saml/SSO',
+        assertionConsumerServiceURL : SamlTestData.SP_BASE_URL + '/saml/SSO',
         ecpRequestIssuer : SamlTestData.SP_RESOURCE_URL,
         authRequestIssuer : SamlTestData.SP_RESOURCE_URL
     });
@@ -114,8 +114,8 @@ SamlTestData.createPAOSRequest = function (fieldValues) {
 SamlTestData.createPAOSAuthSuccess = function (fieldValues) {
 
     var fields = uscore.defaults(fieldValues || {}, {
-        assertionConsumerServiceURL: SamlTestData.SP_RESOURCE_URL + '/saml/SSO',
-        responseDestination: SamlTestData.SP_RESOURCE_URL + '/saml/SSO',
+        assertionConsumerServiceURL: SamlTestData.SP_BASE_URL + '/saml/SSO',
+        responseDestination: SamlTestData.SP_BASE_URL + '/saml/SSO',
         recipient: SamlTestData.SP_NAME
     });
 
@@ -271,8 +271,8 @@ SamlTestData.createPAOSAuthSuccess = function (fieldValues) {
 SamlTestData.createPAOSAuthFailed = function (fieldValues) {
 
     var fields = uscore.defaults(fieldValues || {}, {
-        assertionConsumerServiceURL: SamlTestData.SP_RESOURCE_URL + '/saml/SSO',
-        responseDestination: SamlTestData.SP_RESOURCE_URL + '/saml/SSO'
+        assertionConsumerServiceURL: SamlTestData.SP_BASE_URL + '/saml/SSO',
+        responseDestination: SamlTestData.SP_BASE_URL + '/saml/SSO'
     });
 
     return '<?xml version="1.0" encoding="UTF-8"?>\

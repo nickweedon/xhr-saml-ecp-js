@@ -137,5 +137,6 @@ module.exports = function(grunt) {
     grunt.registerTask('startServers', 'Start the mock servers', ['forever:idpserver:restart', 'forever:spserver:restart']);
     grunt.registerTask('stopServers', 'Start the mock servers', ['forever:idpserver:stop', 'forever:spserver:stop']);
 	grunt.registerTask('doc', ['compile', 'jsdoc']);
-	grunt.registerTask('watchServers', ['watch:watchservers']);
+	grunt.registerTask('watchServers', 'Start the test servers and reload on source file changes', ['watch:watchservers']);
+	grunt.registerTask('runServer', 'blah blah', ['express:idpserver', 'express:spserver']);
 };

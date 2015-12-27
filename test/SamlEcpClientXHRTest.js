@@ -27,6 +27,8 @@ describe('SamlEcpClientXHR Test', function() {
     });
 
     // Check to make sure that the mock servers work correctly with the underlying SAML client
+    // This is just a simple sanity check, mainly to ensure that the mock servers are written correctly and work with the
+    // current version of the client.
     describe("SAML Client <-> Mock Server Sanity Check", function() {
 
         it.only("Can authenticate against dummy servers", function (done) {
@@ -41,7 +43,7 @@ describe('SamlEcpClientXHR Test', function() {
                 username : 'bob',
                 onSuccess : function() {
                     successSpy();
-                    done();
+                    //done();
                 },
                 onEcpAuth : function(authCtx) {
                     authCtx.setPassword('mysecret');
@@ -51,8 +53,6 @@ describe('SamlEcpClientXHR Test', function() {
                     sinon.assert.fail("SAML client error: " + msg);
                 }
             });
-
-
         });
     });
     /*

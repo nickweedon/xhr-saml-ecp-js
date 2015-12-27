@@ -27,7 +27,7 @@ app.get(data.SAML.SP_RESOURCE_URL_SUFFIX, function (req, res) {
     console.log("Sent SP resource...");
 });
 
-app.get(data.SAML.SP_SSO_URL_SUFFIX, function (req, res) {
+app.post(data.SAML.SP_SSO_URL_SUFFIX, function (req, res) {
     isAuthenticated = true;
     console.log("SP Got SSO payload...");
     res.status(200).send("OK");

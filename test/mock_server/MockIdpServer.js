@@ -17,9 +17,9 @@ app.use(function(req, res, next) {
 app.post(data.SAML.IDP_ENDPOINT_URL_SUFFIX, function (req, res) {
     res.header("SOAPAction", data.SAML.PAOS_SOAP_ACTION);
 
-    var authString = req.headers['Authorization'];
+    var authString = req.headers['authorization'];
 
-    console.log("Request headers = '" + req.headers + "'");
+    console.log("Request headers = '" + JSON.stringify(req.headers) + "'");
 
     if(authString === undefined) {
         console.log("Attempting to authenticate with IDp using pre-existing session (no authorization string)");
