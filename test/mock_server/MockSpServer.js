@@ -33,6 +33,11 @@ app.post(data.SAML.SP_SSO_URL_SUFFIX, function (req, res) {
     res.status(200).send("OK");
 });
 
+app.post("/reset", function (req, res) {
+    isAuthenticated = false;
+    res.status(200).send("OK");
+});
+
 var server = app.listen(data.SAML.SP_PORT, function () {
     var host = server.address().address;
     var port = server.address().port;

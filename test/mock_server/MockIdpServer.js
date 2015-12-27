@@ -14,6 +14,11 @@ app.use(function(req, res, next) {
     next();
 });
 
+app.post("/reset", function (req, res) {
+    isAuthenticated = false;
+    res.status(200).send("OK");
+});
+
 app.post(data.SAML.IDP_ENDPOINT_URL_SUFFIX, function (req, res) {
     res.header("SOAPAction", data.SAML.PAOS_SOAP_ACTION);
 

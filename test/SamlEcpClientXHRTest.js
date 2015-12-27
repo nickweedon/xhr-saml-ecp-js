@@ -4,14 +4,21 @@ describe('SamlEcpClientXHR Test', function() {
     var xhrAdaptorJs = null;
     var xhrTestUtils = null;
     var samlEcpClientJs = null;
+    var $ = null;
 
     beforeEach(function(done) {
-        require(["xhr-saml-ecp-js", "saml-ecp-client-js", "xhr-adaptor-js", "xhrTestUtils"], function(xhrSamlEcpJsNS, samlEcpClientJsNS, xhrAdaptorJsNS, xhrTestUtilsNS) {
+        require(["xhr-saml-ecp-js", "saml-ecp-client-js", "xhr-adaptor-js", "xhrTestUtils", "jquery"], function(xhrSamlEcpJsNS, samlEcpClientJsNS, xhrAdaptorJsNS, xhrTestUtilsNS, jqueryNS) {
             xhrSamlEcpJs = xhrSamlEcpJsNS;
             samlEcpClientJs = samlEcpClientJsNS;
             xhrAdaptorJs = xhrAdaptorJsNS;
             xhrTestUtils = xhrTestUtilsNS;
-            done();
+            $ = jqueryNS;
+            // Reset the dummy SAML servers
+            $.post("http://localhost:3100/reset", function() {
+                $.post("http://localhost:3000/reset", function () {
+                    done();
+                });
+            });
         });
     });
 
@@ -21,19 +28,12 @@ describe('SamlEcpClientXHR Test', function() {
         //xhrSamlEcpJs.SamlEcpClientXHR.clearResponseHandlers();
     });
 
-    it("Can instantiate successfully", function () {
-        var xhr = new xhrSamlEcpJs.SamlEcpClientXHR(xhrTestUtils.createNativeXhr());
-        assert.ok( xhr !== undefined, "Failed to instantiate xhrSamlEcpJs.SamlEcpClientXHR" );
-    });
+    describe("Dummy SAML server sanity checks", function() {
 
-    // Check to make sure that the mock servers work correctly with the underlying SAML client
-    // This is just a simple sanity check, mainly to ensure that the mock servers are written correctly and work with the
-    // current version of the client.
-    describe("SAML Client <-> Mock Server Sanity Check", function() {
-
-        it.only("Can authenticate against dummy servers", function (done) {
-
-            var successSpy = sinon.spy();
+        // Check to make sure that the mock servers work correctly with the underlying SAML client
+        // This is just a simple sanity check, mainly to ensure that the mock servers are written correctly and work with the
+        // current version of the client.
+        it("Can run SAML Client against dummy SAML servers (sanity check)", function (done) {
 
             var samlClient = new samlEcpClientJs.Client({
                 idpEndpointUrl: "http://localhost:3000/idp/profile/SAML2/SOAP/ECP"
@@ -42,7 +42,6 @@ describe('SamlEcpClientXHR Test', function() {
             samlClient.get("http://localhost:3100/private", {
                 username : 'bob',
                 onSuccess : function() {
-                    successSpy();
                     done();
                 },
                 onEcpAuth : function(authCtx) {
@@ -54,51 +53,83 @@ describe('SamlEcpClientXHR Test', function() {
                 }
             });
         });
-    });
-    /*
-    it.only("Can talk to dummy server", function (done) {
 
-        var onEcpErrorCallback = sinon.spy();
-        var onErrorCallback = sinon.spy();
-        var onSamlTimeoutCallback = sinon.spy();
-        var onResourceTimeoutCallback = sinon.spy();
+        it("Will reset dummy SAML server auth state", function (done) {
 
-        //var xhr = new xhrSamlEcpJs.SamlEcpClientXHR(xhrTestUtils.createNativeXhr());
-        xhrSamlEcpJs.SamlEcpClientXHR.config({
-            options: {
-                idpEndpointUrl: "http://localhost:3000/idp/profile/SAML2/SOAP/ECP",
+            var onAurhSpy = sinon.spy();
+
+            var samlClient = new samlEcpClientJs.Client({
+                idpEndpointUrl: "http://localhost:3000/idp/profile/SAML2/SOAP/ECP"
+            });
+
+            samlClient.get("http://localhost:3100/private", {
                 username : 'bob',
+                onSuccess : function() {
+                    sinon.assert.calledOnce(onAurhSpy);
+                    done();
+                },
                 onEcpAuth : function(authCtx) {
-                    authCtx.setPassword('bob');
+                    onAurhSpy(authCtx);
+                    authCtx.setPassword('mysecret');
                     authCtx.retryAuth();
+                },
+                onError : function(xhr, msg) {
+                    sinon.assert.fail("SAML client error: " + msg);
                 }
-            },
-            aclList: [{
-                    urlPattern : "^http://localhost:3100/private",
-                    options : {
-                        samlTimeout : 0,
-                        resourceTimeout : 0,
-                        onEcpError : onEcpErrorCallback,
-                        onError : onErrorCallback,
-                        onSamlTimeout : onSamlTimeoutCallback,
-                        onResourceTimeout : onResourceTimeoutCallback
-                    }
-                }
-            ]
+            });
+        });
+    });
+
+    describe("SAML XHR injection tests", function() {
+
+        it("Can instantiate successfully", function () {
+            var xhr = new xhrSamlEcpJs.SamlEcpClientXHR(xhrTestUtils.createNativeXhr());
+            assert.ok( xhr !== undefined, "Failed to instantiate xhrSamlEcpJs.SamlEcpClientXHR" );
         });
 
-        xhrAdaptorJs.manager.injectWrapper(xhrSamlEcpJs.SamlEcpClientXHR);
+        it.only("Can authenticate", function (done) {
 
-        var xhr = new XMLHttpRequest();
+            var onEcpErrorCallback = sinon.spy();
+            var onErrorCallback = sinon.spy();
+            var onSamlTimeoutCallback = sinon.spy();
+            var onResourceTimeoutCallback = sinon.spy();
 
-        xhr.open("get", "http://localhost:3100/private");
-        xhr.onreadystatechange = function() {
-          if(this.readyState == 4) {
-              assert.equal(this.responseText, "Hello World!");
-              done();
-          }
-        };
-        xhr.send();
+            //var xhr = new xhrSamlEcpJs.SamlEcpClientXHR(xhrTestUtils.createNativeXhr());
+            xhrSamlEcpJs.SamlEcpClientXHR.config({
+                options: {
+                    idpEndpointUrl: "http://localhost:3000/idp/profile/SAML2/SOAP/ECP",
+                    username: 'bob',
+                    onEcpAuth: function (authCtx) {
+                        authCtx.setPassword('mysecret');
+                        authCtx.retryAuth();
+                    }
+                },
+                aclList: [{
+                    urlPattern: "^http://localhost:3100/private",
+                    options: {
+                        samlTimeout: 0,
+                        resourceTimeout: 0,
+                        onEcpError: onEcpErrorCallback,
+                        onError: onErrorCallback,
+                        onSamlTimeout: onSamlTimeoutCallback,
+                        onResourceTimeout: onResourceTimeoutCallback
+                    }
+                }
+                ]
+            });
+
+            xhrAdaptorJs.manager.injectWrapper(xhrSamlEcpJs.SamlEcpClientXHR);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open("get", "http://localhost:3100/private");
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4) {
+                    assert.equal(this.responseText, "Hello World!");
+                    done();
+                }
+            };
+            xhr.send();
+        });
     });
-    */
 });
