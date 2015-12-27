@@ -99,6 +99,17 @@ module.exports = function(grunt) {
 					outFile : 'sp_server.log'
 				}
 			}
+		},
+		watch: {
+			watchservers: {
+				files :  [ 'test/mock_server/*.js', 'test/data/SamlTestData.js' ],
+				tasks : ['express:idpserver', 'express:spserver'],
+				options: {
+					atBegin : true,
+					livereload: true,
+					spawn: false
+				}
+			}
 		}
 	});
 
@@ -111,6 +122,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-jsdoc');
 	grunt.loadNpmTasks('grunt-express-server');
 	grunt.loadNpmTasks('grunt-forever');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	
 	// Default task(s).
 	grunt.registerTask('default', ['jshint', 'includereplace', 'copy', 'jsdoc', 'uglify']);
@@ -125,4 +137,5 @@ module.exports = function(grunt) {
     grunt.registerTask('startServers', 'Start the mock servers', ['forever:idpserver:restart', 'forever:spserver:restart']);
     grunt.registerTask('stopServers', 'Start the mock servers', ['forever:idpserver:stop', 'forever:spserver:stop']);
 	grunt.registerTask('doc', ['compile', 'jsdoc']);
+	grunt.registerTask('watchServers', ['watch:watchservers']);
 };
