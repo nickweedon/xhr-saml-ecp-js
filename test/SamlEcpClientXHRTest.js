@@ -119,16 +119,10 @@ describe('SamlEcpClientXHR Test', function() {
 
             xhrAdaptorJs.manager.injectWrapper(xhrSamlEcpJs.SamlEcpClientXHR);
 
-            var xhr = new XMLHttpRequest();
-
-            xhr.open("get", "http://localhost:3100/private");
-            xhr.onreadystatechange = function () {
-                if (this.readyState == 4) {
-                    assert.equal(this.responseText, "Hello World!");
+            $.get("http://localhost:3100/private", function (data) {
+                    assert.equal(data, "Hello World!");
                     done();
-                }
-            };
-            xhr.send();
+            });
         });
     });
 });
