@@ -53,11 +53,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SamlEcpClientXHRTest.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SamlEcpXhr.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SamlEcpXhr.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.074074">
+              <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SamlEcpClientXHRTest.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/SamlEcpClientXHRTest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="92" column="46" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.5050505">
+              <caret line="119" column="78" selection-start-line="119" selection-start-column="78" selection-end-line="119" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -67,18 +77,21 @@
         <entry file="file://$PROJECT_DIR$/dist/xhr-saml-ecp-js.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="99" column="57" selection-start-line="99" selection-start-column="57" selection-end-line="99" selection-end-column="57" />
+              <caret line="98" column="57" selection-start-line="98" selection-start-column="57" selection-end-line="98" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="saml-ecp-client-js.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="saml-ecp-client-js.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bower_components/saml-ecp-client-js/dist/saml-ecp-client-js.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45075756">
-              <caret line="637" column="6" selection-start-line="637" selection-start-column="6" selection-end-line="637" selection-end-column="6" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="657" column="32" selection-start-line="657" selection-start-column="32" selection-end-line="657" selection-end-column="32" />
+              <folding>
+                <marker date="1451202143104" expanded="true" signature="10500:10569" placeholder="/** Step 1 - Initiate the initial resource request to the SP ...*/" />
+                <marker date="1451202143104" expanded="true" signature="14198:16186" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,7 +111,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test/unit/util/crap.js" />
         <option value="$PROJECT_DIR$/main-test.js" />
         <option value="$PROJECT_DIR$/test/test/stuff.js" />
         <option value="$PROJECT_DIR$/test/test/main-test.js" />
@@ -139,7 +151,6 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/test/MockIdpServer/app.js" />
         <option value="$PROJECT_DIR$/bower_components/xhr-blocking-queue-js/dist/xhr-blocking-queue-js.js" />
-        <option value="$PROJECT_DIR$/src/SamlEcpXhr.js" />
         <option value="$PROJECT_DIR$/karma.conf.js" />
         <option value="$PROJECT_DIR$/test/data/SamlTestData.js" />
         <option value="$PROJECT_DIR$/bower.json" />
@@ -147,8 +158,10 @@
         <option value="$PROJECT_DIR$/test/test-require-deps.js" />
         <option value="$PROJECT_DIR$/test/mock_server/MockSpServer.js" />
         <option value="$PROJECT_DIR$/test/mock_server/MockIdpServer.js" />
-        <option value="$PROJECT_DIR$/test/SamlEcpClientXHRTest.js" />
         <option value="$PROJECT_DIR$/dist/xhr-saml-ecp-js.js" />
+        <option value="$PROJECT_DIR$/bower_components/saml-ecp-client-js/dist/saml-ecp-client-js.js" />
+        <option value="$PROJECT_DIR$/src/SamlEcpXhr.js" />
+        <option value="$PROJECT_DIR$/test/SamlEcpClientXHRTest.js" />
       </list>
     </option>
   </component>
@@ -400,57 +413,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mock_server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xhr-saml-ecp-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xhr-saml-ecp-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xhr-saml-ecp-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xhr-saml-ecp-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xhr-saml-ecp-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xhr-saml-ecp-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -765,24 +728,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Tests - 2015.12.27 at 16h 12m 43s.xml">
-      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
-    <history-entry file="All_Tests - 2015.12.27 at 16h 13m 55s.xml">
-      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
-    <history-entry file="All_Tests - 2015.12.27 at 16h 17m 00s.xml">
-      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
-    <history-entry file="All_Tests - 2015.12.27 at 16h 23m 31s.xml">
-      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
-    <history-entry file="All_Tests - 2015.12.27 at 16h 24m 29s.xml">
-      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
-    <history-entry file="All_Tests - 2015.12.27 at 16h 24m 49s.xml">
-      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
     <history-entry file="All_Tests - 2015.12.27 at 16h 25m 21s.xml">
       <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
@@ -795,10 +740,28 @@
     <history-entry file="All_Tests - 2015.12.27 at 16h 31m 34s.xml">
       <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
+    <history-entry file="All_Tests - 2015.12.27 at 17h 44m 04s.xml">
+      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="All_Tests - 2015.12.27 at 17h 46m 13s.xml">
+      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="All_Tests - 2015.12.27 at 18h 06m 32s.xml">
+      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="All_Tests - 2015.12.27 at 18h 08m 14s.xml">
+      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="All_Tests - 2015.12.27 at 18h 08m 58s.xml">
+      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="All_Tests - 2015.12.27 at 18h 09m 15s.xml">
+      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23397435" sideWeight="0.49356914" order="0" side_tool="false" content_ui="combo" x="299" y="147" width="346" height="635" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -807,11 +770,11 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.50479746" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.49520257" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32683983" sideWeight="0.49520257" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16239317" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3982684" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3982684" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -844,12 +807,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/bower_components/saml-ecp-client-js/dist/saml-ecp-client-js.js</url>
-          <line>502</line>
+          <line>517</line>
           <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/bower_components/saml-ecp-client-js/dist/saml-ecp-client-js.js</url>
-          <line>624</line>
+          <line>639</line>
           <option name="timeStamp" value="89" />
         </line-breakpoint>
       </breakpoints>
@@ -1206,34 +1169,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SamlEcpXhr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="33" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/SamlEcpClientXHRTest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="92" column="46" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/xhr-saml-ecp-js.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="99" column="57" selection-start-line="99" selection-start-column="57" selection-end-line="99" selection-end-column="57" />
+          <caret line="98" column="57" selection-start-line="98" selection-start-column="57" selection-end-line="98" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bower_components/saml-ecp-client-js/dist/saml-ecp-client-js.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45075756">
-          <caret line="637" column="6" selection-start-line="637" selection-start-column="6" selection-end-line="637" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="657" column="32" selection-start-line="657" selection-start-column="32" selection-end-line="657" selection-end-column="32" />
+          <folding>
+            <marker date="1451202143104" expanded="true" signature="10500:10569" placeholder="/** Step 1 - Initiate the initial resource request to the SP ...*/" />
+            <marker date="1451202143104" expanded="true" signature="14198:16186" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SamlEcpXhr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.074074">
+          <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/SamlEcpClientXHRTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5050505">
+          <caret line="119" column="78" selection-start-line="119" selection-start-column="78" selection-end-line="119" selection-end-column="78" />
           <folding />
         </state>
       </provider>

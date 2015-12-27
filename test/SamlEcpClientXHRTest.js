@@ -87,14 +87,13 @@ describe('SamlEcpClientXHR Test', function() {
             assert.ok( xhr !== undefined, "Failed to instantiate xhrSamlEcpJs.SamlEcpClientXHR" );
         });
 
-        it.only("Can authenticate", function (done) {
+        it("Can authenticate", function (done) {
 
             var onEcpErrorCallback = sinon.spy();
             var onErrorCallback = sinon.spy();
             var onSamlTimeoutCallback = sinon.spy();
             var onResourceTimeoutCallback = sinon.spy();
 
-            //var xhr = new xhrSamlEcpJs.SamlEcpClientXHR(xhrTestUtils.createNativeXhr());
             xhrSamlEcpJs.SamlEcpClientXHR.config({
                 options: {
                     idpEndpointUrl: "http://localhost:3000/idp/profile/SAML2/SOAP/ECP",

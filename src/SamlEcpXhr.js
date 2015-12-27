@@ -59,10 +59,10 @@ xhrSamlEcpJs.SamlEcpClientXHR.responseHandler = function(doContinue, xhr) {
 
 	var mandatoryClientOptions = {
 		xhrFactory : function() {
-			var xhr = new XMLHttpRequest();
-			xhr.bypassFilter = true;
+			var samlXhr = new XMLHttpRequest();
+			samlXhr.bypassFilter = true;
 
-			return xhr;
+			return samlXhr;
 		}
 	};
 
@@ -85,7 +85,7 @@ xhrSamlEcpJs.SamlEcpClientXHR.responseHandler = function(doContinue, xhr) {
 		xhr.send();
 	};
 
-	samlClient.get(xhr.openArgs[1], samlConfig);
+	samlClient.auth(xhr.responseText, xhr.openArgs[1], samlConfig);
 
 };
 
