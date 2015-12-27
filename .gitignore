@@ -2,4 +2,6 @@ bower_components/
 node_modules/
 obj/
 doc_output/
+mock_server_log/
+test_output/
 .readme.MD.html

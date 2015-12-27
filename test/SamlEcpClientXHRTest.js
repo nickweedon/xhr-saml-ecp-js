@@ -43,7 +43,7 @@ describe('SamlEcpClientXHR Test', function() {
                 username : 'bob',
                 onSuccess : function() {
                     successSpy();
-                    //done();
+                    done();
                 },
                 onEcpAuth : function(authCtx) {
                     authCtx.setPassword('mysecret');
