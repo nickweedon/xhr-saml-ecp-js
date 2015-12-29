@@ -40,6 +40,8 @@
   },
   "devDependencies": {
     "requirejs": "~2.1.15",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "jquery-colorbox": "~1.6.3",
+    "underscore": "~1.8.3"
   }
 }

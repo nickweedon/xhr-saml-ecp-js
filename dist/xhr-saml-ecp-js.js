@@ -159,10 +159,47 @@ xhrSamlEcpJs.SamlEcpClientXHR.config = function(configObj) {
 
 		xhrBQJs.BlockingRequestQueueXHR.registerResponseHandler(aclConfig.urlPattern, this.responseHandler);
 	}
-
 };
 
+// Open resets the request headers
+xhrSamlEcpJs.SamlEcpClientXHR.prototype.open = function() {
 
+	this.requestHeaders = {};
+
+	xhrBQJs.BlockingRequestQueueXHR.prototype.open.apply(this, arguments);
+};
+
+// Need to know if the PAOS header has been set (cannot read request headers normally)
+// Setting the PAOS header twice will result in a rubbish string as its value will be repeated
+// (W3 org section 4.6.2 - http://www.w3.org/TR/XMLHttpRequest/)
+xhrSamlEcpJs.SamlEcpClientXHR.prototype.setRequestHeader = function(headerKey, headerValue) {
+
+	this.requestHeaders[headerKey.toLowerCase()] = headerValue;
+
+	xhrBQJs.BlockingRequestQueueXHR.prototype.setRequestHeader.apply(this, arguments);
+};
+
+// Add the PAOS header if this request matches an ACL and the header has not already been added
+xhrSamlEcpJs.SamlEcpClientXHR.prototype.send = function() {
+
+	if(!this.isPAOSHeaderSet) {
+		var acl = getAclForURL(this.openArgs[1]);
+
+		if(acl !== null) {
+			if(!this.requestHeaders.hasOwnProperty('paos')) {
+				this.setRequestHeader('PAOS', 'ver="urn:liberty:paos:2003-08";"urn:oasis:names:tc:SAML:2.0:profiles:SSO:ecp"');
+			}
+			// If accept has not already been set then set it to */* so that we don't accidentally constrain
+			// the request to ONLY accepting PAOS
+			if(!this.requestHeaders.hasOwnProperty('accept')) {
+				this.setRequestHeader('Accept', '*/*');
+			}
+			this.setRequestHeader('Accept', 'text/html; application/vnd.paos+xml');
+		}
+	}
+
+	xhrBQJs.BlockingRequestQueueXHR.prototype.send.apply(this, arguments);
+};
 
 
 		return xhrSamlEcpJs;

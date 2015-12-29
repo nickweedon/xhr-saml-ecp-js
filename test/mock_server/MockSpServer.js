@@ -14,8 +14,29 @@ app.use(function(req, res, next) {
     next();
 });
 
+function containsMimeType(acceptString, mimeType) {
+    var acceptArray = acceptString.split(", ");
+
+    return acceptArray.indexOf(mimeType) != -1;
+}
+
 app.get(data.SAML.SP_RESOURCE_URL_SUFFIX, function (req, res) {
+
     if(!isAuthenticated) {
+        var paosString = req.headers['paos'];
+        var acceptString = req.headers['accept'];
+
+        //var allAndPaos = "*/*, text/html; application/vnd.paos+xml";
+
+        if(paosString != data.SAML.PAOS_ATTRIBUTE || !containsMimeType(acceptString, data.SAML.TEXT_PAOS_ACCEPT_ATTRIBUTE)) {
+
+            // This is not supposed to occur (xhr-saml-ecp-js client should always send the PAOS attribute)
+            console.error("SP did not receive a PAOS HTTP header attribute. SAML ECP will not be triggered. " +
+                "PAOS header: '" + paosString + "'\n" +
+                "Accept header: '" + acceptString + "'");
+            res.status(200).send("This would normally be a redirect to perform regular web based SAML SSO.");
+            return;
+        }
         res.header("SOAPAction", data.SAML.PAOS_SOAP_ACTION);
         res.header("Content-Type", data.SAML.PAOS_UTF8_CONTENT_TYPE);
         res.status(200).send(data.SAML.createPAOSRequest());
@@ -35,6 +56,7 @@ app.post(data.SAML.SP_SSO_URL_SUFFIX, function (req, res) {
 
 app.post("/reset", function (req, res) {
     isAuthenticated = false;
+    console.log("Reset state of SP server");
     res.status(200).send("OK");
 });
 

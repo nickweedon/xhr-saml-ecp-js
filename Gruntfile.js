@@ -110,6 +110,14 @@ module.exports = function(grunt) {
 					spawn: false
 				}
 			}
+		},
+		connect: {
+			server: {
+				options: {
+					keepalive: true,
+					port: 8020
+				}
+			}
 		}
 	});
 
@@ -123,7 +131,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-express-server');
 	grunt.loadNpmTasks('grunt-forever');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	
+	grunt.loadNpmTasks('grunt-contrib-connect');
+
 	// Default task(s).
 	grunt.registerTask('default', ['jshint', 'includereplace', 'copy', 'jsdoc', 'uglify']);
 	grunt.registerTask('dist', ['jshint', 'includereplace', 'copy', 'uglify']);
@@ -138,5 +147,5 @@ module.exports = function(grunt) {
     grunt.registerTask('stopServers', 'Start the mock servers', ['forever:idpserver:stop', 'forever:spserver:stop']);
 	grunt.registerTask('doc', ['compile', 'jsdoc']);
 	grunt.registerTask('watchServers', 'Start the test servers and reload on source file changes', ['watch:watchservers']);
-	grunt.registerTask('runServer', 'blah blah', ['express:idpserver', 'express:spserver']);
+	grunt.registerTask('manualtest', ['bower-install-simple', 'connect']);
 };
