@@ -9,6 +9,9 @@
 
 <input type="button" name="login" value="Login" onclick="doLogin()">
 
+
+<div id="errorOutput"></div>
+
 <div id="output"></div>
 
 <script type="text/javascript">
@@ -29,13 +32,12 @@
 					resourceTimeout: 0,
 					onEcpError : function(ecpErrorObj) {
 
-						console.debug("Got error");
-						//if(ecpErrorObj.errorCode == samlEcpClientJs.ECP_ERROR.IDP_RESPONSE_ERROR)
-                        //TODO: Use an enumeration here
-                        if(ecpErrorObj.errorCode === -1)
-							console.debug("IdP Error:", ecpErrorObj.idpStatus);
+                        var errorMsg = "ECP Error: " + JSON.stringify(ecpErrorObj);
+                        $("#errorOutput").html(errorMsg);
+                        console.error(errorMsg);
 					},
 					onError : function(xmlHttp, msg) {
+                        $("#errorOutput").html(msg);
 						console.error(msg);
 					},
 					onEcpAuth : function(authCtx) {

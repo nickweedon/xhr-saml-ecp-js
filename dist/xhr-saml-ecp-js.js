@@ -174,7 +174,20 @@ xhrSamlEcpJs.SamlEcpClientXHR.prototype.open = function() {
 // (W3 org section 4.6.2 - http://www.w3.org/TR/XMLHttpRequest/)
 xhrSamlEcpJs.SamlEcpClientXHR.prototype.setRequestHeader = function(headerKey, headerValue) {
 
-	this.requestHeaders[headerKey.toLowerCase()] = headerValue;
+	var lcHeaderKey = headerKey.toLowerCase();
+
+	if(lcHeaderKey in this.requestHeaders) {
+		var headerValueArray = this.requestHeaders[lcHeaderKey];
+
+		// Don't add the same 'accept' header/value pair twice
+		// This is a bit of a hack but the 'accept' list should be a unique set anyhow
+		if(lcHeaderKey == "accept" && headerValueArray.indexOf(headerValue) !== -1) {
+			return;
+		}
+		headerValueArray.push(headerValue);
+	} else {
+		this.requestHeaders[lcHeaderKey] = [headerValue];
+	}
 
 	xhrBQJs.BlockingRequestQueueXHR.prototype.setRequestHeader.apply(this, arguments);
 };
