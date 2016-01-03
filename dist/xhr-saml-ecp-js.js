@@ -74,7 +74,8 @@ xhrSamlEcpJs.SamlEcpClientXHR.responseHandler = function(doContinue, xhr) {
 			samlXhr.bypassFilter = true;
 
 			return samlXhr;
-		}
+		},
+		retrieveResource : false
 	};
 
 	var effectiveOptions = {};

@@ -124,7 +124,7 @@ describe('SamlEcpClientXHR Test', function() {
             });
         });
 
-        it("Can authenticate and post data using post", function (done) {
+        it.only("Can authenticate and post data using post", function (done) {
 
             var onEcpErrorCallback = sinon.spy();
             var onErrorCallback = sinon.spy();
@@ -160,28 +160,17 @@ describe('SamlEcpClientXHR Test', function() {
                 },
                 function (data) {
                     assert.equal(data, "Hello World!");
-                }
-            );
 
-            $.getJSON("http://localhost:3100/getPostResults", function(data) {
-                for(var i = 0; i < data.length; i++) {
-                    assert.equal(data[i], "Hello there!");
-                }
-                done();
-            });
-        });
-
-/*
-        it.only("Can post stuff", function (done) {
-            $.post("http://localhost:3100/private", {
-                    stuff : "Hello there!"
-                },
-                function (data) {
-                    done();
+                    $.getJSON("http://localhost:3100/getPostResults", function(data) {
+                        for(var i = 0; i < data.length; i++) {
+                            assert.equal(data[i], "Hello there!");
+                        }
+                        // Ensure that we are not performing any uneccessary SP posts
+                        assert.equal(data.length, 3);
+                        done();
+                    });
                 }
             );
         });
-*/
-
     });
 });
