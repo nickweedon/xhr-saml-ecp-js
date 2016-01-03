@@ -124,7 +124,7 @@ describe('SamlEcpClientXHR Test', function() {
             });
         });
 
-        it.only("Can authenticate and post data using post", function (done) {
+        it("Can authenticate and post data using post", function (done) {
 
             var onEcpErrorCallback = sinon.spy();
             var onErrorCallback = sinon.spy();
