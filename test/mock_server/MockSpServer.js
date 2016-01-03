@@ -3,6 +3,7 @@ var app = express();
 
 var data = require('../data/SamlTestData');
 var isAuthenticated = false;
+var postDataResults = [];
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "http://localhost:9876");
@@ -20,7 +21,7 @@ function containsMimeType(acceptString, mimeType) {
     return acceptArray.indexOf(mimeType) != -1;
 }
 
-app.get(data.SAML.SP_RESOURCE_URL_SUFFIX, function (req, res) {
+function processRequest(req, res) {
 
     if(!isAuthenticated) {
         var paosString = req.headers['paos'];
@@ -46,7 +47,25 @@ app.get(data.SAML.SP_RESOURCE_URL_SUFFIX, function (req, res) {
 
     res.status(200).send("Hello World!");
     console.log("Sent SP resource...");
+}
+
+
+app.get(data.SAML.SP_RESOURCE_URL_SUFFIX, function (req, res) {
+    processRequest(req, res);
 });
+
+var bodyParser = require('body-parser')
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+    extended: true
+}));
+
+app.post(data.SAML.SP_RESOURCE_URL_SUFFIX, function (req, res) {
+    processRequest(req, res);
+    console.log("Request body is: " + req.body.stuff);
+    postDataResults.push(req.body.stuff);
+});
+
 
 app.post(data.SAML.SP_SSO_URL_SUFFIX, function (req, res) {
     isAuthenticated = true;
@@ -56,8 +75,15 @@ app.post(data.SAML.SP_SSO_URL_SUFFIX, function (req, res) {
 
 app.post("/reset", function (req, res) {
     isAuthenticated = false;
+    postDataResults = [];
     console.log("Reset state of SP server");
     res.status(200).send("OK");
+});
+
+app.get("/getPostResults", function (req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    console.log("Retrieving POST results");
+    res.status(200).send(JSON.stringify(postDataResults));
 });
 
 var server = app.listen(data.SAML.SP_PORT, function () {

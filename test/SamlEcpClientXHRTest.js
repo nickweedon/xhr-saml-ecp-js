@@ -87,7 +87,7 @@ describe('SamlEcpClientXHR Test', function() {
             assert.ok( xhr !== undefined, "Failed to instantiate xhrSamlEcpJs.SamlEcpClientXHR" );
         });
 
-        it("Can authenticate", function (done) {
+        it("Can authenticate using get", function (done) {
 
             var onEcpErrorCallback = sinon.spy();
             var onErrorCallback = sinon.spy();
@@ -123,5 +123,65 @@ describe('SamlEcpClientXHR Test', function() {
                     done();
             });
         });
+
+        it("Can authenticate and post data using post", function (done) {
+
+            var onEcpErrorCallback = sinon.spy();
+            var onErrorCallback = sinon.spy();
+            var onSamlTimeoutCallback = sinon.spy();
+            var onResourceTimeoutCallback = sinon.spy();
+
+            xhrSamlEcpJs.SamlEcpClientXHR.config({
+                options: {
+                    idpEndpointUrl: "http://localhost:3000/idp/profile/SAML2/SOAP/ECP",
+                    username: 'bob',
+                    onEcpAuth: function (authCtx) {
+                        authCtx.setPassword('mysecret');
+                        authCtx.retryAuth();
+                    }
+                },
+                aclList: [{
+                    urlPattern: "^http://localhost:3100/private",
+                    options: {
+                        samlTimeout: 0,
+                        resourceTimeout: 0,
+                        onEcpError: onEcpErrorCallback,
+                        onError: onErrorCallback,
+                        onSamlTimeout: onSamlTimeoutCallback,
+                        onResourceTimeout: onResourceTimeoutCallback
+                    }
+                }]
+            });
+
+            xhrAdaptorJs.manager.injectWrapper(xhrSamlEcpJs.SamlEcpClientXHR);
+
+            $.post("http://localhost:3100/private", {
+                    stuff : "Hello there!"
+                },
+                function (data) {
+                    assert.equal(data, "Hello World!");
+                }
+            );
+
+            $.getJSON("http://localhost:3100/getPostResults", function(data) {
+                for(var i = 0; i < data.length; i++) {
+                    assert.equal(data[i], "Hello there!");
+                }
+                done();
+            });
+        });
+
+/*
+        it.only("Can post stuff", function (done) {
+            $.post("http://localhost:3100/private", {
+                    stuff : "Hello there!"
+                },
+                function (data) {
+                    done();
+                }
+            );
+        });
+*/
+
     });
 });

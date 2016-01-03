@@ -13,3 +13,7 @@ Command line unit testing
 -------------------------
 Run:  
 >grunt test
+
+TODO
+----
+* Add unit tests for all REST methods, push, post, delete etc or at least just POST and check that data is sent
