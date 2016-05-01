@@ -7,8 +7,30 @@
 <body>
 <H1>SAML Authentication Test</H1>
 
+
+<table>
+    <tr><td>IDP Endpoint URL: </td><td><input id='idpEndpointUrl' value='http://wyvern.weedon.int:8030/idp/profile/SAML2/SOAP/ECP' size='60'></td></tr>
+    <tr><td>Secured URL RegEx: </td><td><input id='urlPattern' value='^http://saml-sp.weedon.int' size='60'></td></tr>
+    <tr><td>Get Request URL: </td><td><input id='getRequestUrl' value='http://saml-sp.weedon.int/' size='60'></td></tr>
+</table>
+
+<br><br>
+
 <input type="button" name="login" value="Login" onclick="doLogin()">
 
+<br><br>
+
+<table cellpadding="10">
+    <tr>
+        <td><input type="button" name="login" value="Start Repeat Login" onclick="startRepeatLogin()"></td>
+        <td><input type="button" name="login" value="Stop Repeat Login" onclick="stopRepeatLogin()"></td>
+    </tr>
+</table>
+
+<table>
+    <tr><td>Request Count: </td><td><input id='reqCount' value='0'></td></tr>
+    <tr><td>Response Count: </td><td><input id='respCount' value='0'></td></tr>
+</table>
 
 <div id="errorOutput" style="color:red;padding-top:10px"></div>
 
@@ -23,10 +45,10 @@
         console.debug("Setting up saml");
 		xhrSamlEcpJs.SamlEcpClientXHR.config({
 			options: {
-				idpEndpointUrl: "http://wyvern.weedon.int:8030/idp/profile/SAML2/SOAP/ECP"
+				idpEndpointUrl: $("#idpEndpointUrl").val()
 			},
 			aclList: [{
-				urlPattern: "^http://saml-sp.weedon.int",
+				urlPattern: $("#urlPattern").val(),
 				options: {
 					samlTimeout: 2000,
 					resourceTimeout: 2000,
@@ -99,7 +121,9 @@
 			// Not that this URL MUST match exactly the url in the metadata or else
 			// the correct cookie will not be used during the first half of authentication
 			//var url = "http://media-center.weedon.int:8080/spring-security-saml2-sample/";
-			var url = "http://saml-sp.weedon.int/";
+			var url = $("#getRequestUrl").val();
+
+            $("#reqCount").val(parseInt($("#reqCount").val()) + 1);
 
             $.ajax({
                 type: 'GET',
@@ -110,6 +134,7 @@
                 },
                 success: function(data) {
                     $("#output").html(data);
+                    $("#respCount").val(parseInt($("#respCount").val()) + 1);
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     var errMsg = "Error occurred when contacting '" + url + "': " + errorThrown;
@@ -119,10 +144,18 @@
             });
 		});
 	}
-	
-	function continueLogin() {
-		
-	}
+
+    var intervalHandle;
+
+    function startRepeatLogin() {
+        intervalHandle = setInterval(function() {
+            doLogin();
+        }, 1000)
+    }
+
+    function stopRepeatLogin() {
+        clearInterval(intervalHandle);
+    }
 </script>
 
     
