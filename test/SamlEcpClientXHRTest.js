@@ -14,11 +14,13 @@ describe('SamlEcpClientXHR Test', function() {
             xhrTestUtils = xhrTestUtilsNS;
             $ = jqueryNS;
             // Reset the dummy SAML servers
-            $.post("http://localhost:3100/reset", function() {
-                $.post("http://localhost:3000/reset", function () {
-                    done();
+            setTimeout(function() {
+                $.post("http://localhost:3100/reset", function() {
+                    $.post("http://localhost:3000/reset", function () {
+                        done();
+                    });
                 });
-            });
+            }, 200);
         });
     });
 
@@ -189,12 +191,6 @@ describe('SamlEcpClientXHR Test', function() {
                     idpEndpointUrl: "http://localhost:3001/idp/profile/SAML2/SOAP/ECP",
                     username: 'bob',
                     onEcpAuth: function (authCtx) {
-                        setTimeout(function () {
-                            authCtx.setPassword('mysecret');
-                            authCtx.retryAuth();
-                            console.debug("Setting PW!!");
-
-                        }, 200);
                     }
                 },
                 aclList: [{
@@ -205,38 +201,41 @@ describe('SamlEcpClientXHR Test', function() {
                         onEcpError: onEcpErrorCallback,
                         onError: onErrorCallback,
                         onSamlTimeout: function() {
-                            console.debug("Timeout!!");
+                            console.error("Timeout!!");
 
-                            xhrSamlEcpJs.SamlEcpClientXHR.config({
-                                options: {
-                                    idpEndpointUrl: "http://localhost:3000/idp/profile/SAML2/SOAP/ECP",
-                                    username: 'bob',
-                                    onEcpAuth: function (authCtx) {
-                                        setTimeout(function () {
-                                            authCtx.setPassword('mysecret');
-                                            authCtx.retryAuth();
-                                        }, 500);
-                                    }
-                                },
-                                aclList: [{
-                                    urlPattern: "^http://localhost:3100/private",
+                            setTimeout(function() {
+                                xhrSamlEcpJs.SamlEcpClientXHR.config({
                                     options: {
-                                        samlTimeout: 0,
-                                        resourceTimeout: 0,
-                                        onEcpError: onEcpErrorCallback,
-                                        onError: onErrorCallback,
-                                        onSamlTimeout: onSamlTimeoutCallback,
-                                        onResourceTimeout: onResourceTimeoutCallback
-                                    }
-                                }]
-                            });
+                                        idpEndpointUrl: "http://localhost:3000/idp/profile/SAML2/SOAP/ECP",
+                                        username: 'bob',
+                                        onEcpAuth: function (authCtx) {
+                                             setTimeout(function () {
+                                             console.error("Second PW!!");
+                                             authCtx.setPassword('mysecret');
+                                             authCtx.retryAuth();
+                                             }, 200);
+                                        }
+                                    },
+                                    aclList: [{
+                                        urlPattern: "^http://localhost:3100/private",
+                                        options: {
+                                            samlTimeout: 0,
+                                            resourceTimeout: 0,
+                                            onEcpError: onEcpErrorCallback,
+                                            onError: onErrorCallback,
+                                            onSamlTimeout: onSamlTimeoutCallback,
+                                            onResourceTimeout: onResourceTimeoutCallback
+                                        }
+                                    }]
+                                });
 
-                            $.get("http://localhost:3100/private", function (data) {
-                                assert.equal(data, "Hello World!");
-                                secondRequestCallback();
-                                sinon.assert.notCalled(firstRequestCallback);
-                                done();
-                            });
+                                $.get("http://localhost:3100/private", function (data) {
+                                    assert.equal(data, "Hello World!");
+                                    secondRequestCallback();
+                                    sinon.assert.notCalled(firstRequestCallback);
+                                    done();
+                                });
+                            }, 100);
                         },
                         onResourceTimeout : onResourceTimeoutCallback
                     }
