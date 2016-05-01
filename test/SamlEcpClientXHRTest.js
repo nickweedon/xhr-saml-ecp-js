@@ -179,6 +179,8 @@ describe('SamlEcpClientXHR Test', function() {
 
         it("Will recover and allow sending after error on authenticate using get", function (done) {
 
+            this.timeout(6000);
+
             var onEcpErrorCallback = sinon.spy();
             var onErrorCallback = sinon.spy();
             var onSamlTimeoutCallback = sinon.spy();
