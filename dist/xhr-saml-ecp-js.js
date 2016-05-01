@@ -97,6 +97,34 @@ xhrSamlEcpJs.SamlEcpClientXHR.responseHandler = function(doContinue, xhr) {
 		xhr.bypassFilter = false;
 		doContinue(false);
 	};
+	samlConfig.onEcpError = function() {
+		if(acl.options !== undefined && acl.options.onEcpError !== undefined) {
+			acl.options.onEcpError.apply(this, arguments);
+		}
+		// Avoid deadlock and ensure that the request is unblocked
+		doContinue(false);
+	};
+	samlConfig.onError = function() {
+		if(acl.options !== undefined && acl.options.onError !== undefined) {
+			acl.options.onError.apply(this, arguments);
+		}
+		// Avoid deadlock and ensure that the request is unblocked
+		doContinue(false);
+	};
+	samlConfig.onSamlTimeout = function() {
+		if(acl.options !== undefined && acl.options.onSamlTimeout !== undefined) {
+			acl.options.onSamlTimeout.apply(this, arguments);
+		}
+		// Avoid deadlock and ensure that the request is unblocked
+		doContinue(false);
+	};
+	samlConfig.onResourceTimeout = function() {
+		if(acl.options !== undefined && acl.options.onResourceTimeout !== undefined) {
+			acl.options.onResourceTimeout.apply(this, arguments);
+		}
+		// Avoid deadlock and ensure that the request is unblocked
+		doContinue(false);
+	};
 
 	samlClient.auth(xhr.openArgs[0], xhr.responseText, xhr.openArgs[1], xhr.sendArgs[0],
 		samlConfig, xhr.getAllRequestHeaders());
