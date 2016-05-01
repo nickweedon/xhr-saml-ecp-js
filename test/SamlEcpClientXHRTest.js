@@ -20,7 +20,7 @@ describe('SamlEcpClientXHR Test', function() {
                         done();
                     });
                 });
-            }, 200);
+            }, 1000);
         });
     });
 
