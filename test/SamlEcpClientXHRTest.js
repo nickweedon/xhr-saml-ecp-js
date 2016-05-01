@@ -166,11 +166,13 @@ describe('SamlEcpClientXHR Test', function() {
                 done();
             });
 
-            $.get("http://localhost:3100/private", function (data) {
-                assert.equal(data, "Hello World!");
-                secondRequestCallback();
-                sinon.assert.calledOnce(firstRequestCallback);
-            });
+            setTimeout(function() {
+                $.get("http://localhost:3100/private", function (data) {
+                    assert.equal(data, "Hello World!");
+                    secondRequestCallback();
+                    sinon.assert.calledOnce(firstRequestCallback);
+                });
+            }, 200);
         });
 
         it("Will recover and allow sending after error on authenticate using get", function (done) {
