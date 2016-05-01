@@ -217,8 +217,8 @@ describe('SamlEcpClientXHR Test', function() {
                                 aclList: [{
                                     urlPattern: "^http://localhost:3100/private",
                                     options: {
-                                        samlTimeout: 200,
-                                        resourceTimeout: 200,
+                                        samlTimeout: 0,
+                                        resourceTimeout: 0,
                                         onEcpError: onEcpErrorCallback,
                                         onError: onErrorCallback,
                                         onSamlTimeout: onSamlTimeoutCallback,
