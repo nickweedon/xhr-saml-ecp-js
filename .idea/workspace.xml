@@ -62,21 +62,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SamlEcpClientXHRTest.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SamlEcpClientXHRTest.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/SamlEcpClientXHRTest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.54195803">
+              <caret line="303" column="56" selection-start-line="303" selection-start-column="56" selection-end-line="303" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MockSpServer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/mock_server/MockSpServer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="47" column="41" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manualtest/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43956044">
-              <caret line="121" column="52" selection-start-line="121" selection-start-column="52" selection-end-line="121" selection-end-column="52" />
+            <state vertical-scroll-proportion="-5.090909">
+              <caret line="121" column="67" selection-start-line="121" selection-start-column="67" selection-end-line="121" selection-end-column="67" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <marker date="1462070665409" expanded="true" signature="2641:2856" placeholder="..." />
@@ -159,8 +169,8 @@
         <option value="$PROJECT_DIR$/bower_components/xhr-blocking-queue-js/dist/xhr-blocking-queue-js.js" />
         <option value="$PROJECT_DIR$/bower_components/saml-ecp-client-js/dist/saml-ecp-client-js.js" />
         <option value="$PROJECT_DIR$/src/SamlEcpXhr.js" />
-        <option value="$PROJECT_DIR$/test/SamlEcpClientXHRTest.js" />
         <option value="$PROJECT_DIR$/manualtest/index.html" />
+        <option value="$PROJECT_DIR$/test/SamlEcpClientXHRTest.js" />
       </list>
     </option>
   </component>
@@ -451,61 +461,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="manualtest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xhr-saml-ecp-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xhr-saml-ecp-js" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xhr-blocking-queue-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xhr-saml-ecp-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xhr-saml-ecp-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xhr-blocking-queue-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xhr-saml-ecp-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xhr-saml-ecp-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
+              <option name="myItemId" value="mock_server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -545,7 +505,7 @@
       <recent name="C:\dev\RedWyvern\xhr-adaptor-js\test\unit" />
     </key>
   </component>
-  <component name="RunManager" selected="Grunt.js.Start Manual Test Server">
+  <component name="RunManager" selected="Karma.All Tests">
     <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/xhr-saml-ecp-js/manualtest/index.html">
       <method />
     </configuration>
@@ -758,34 +718,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Tests - 2016.05.01 at 11h 49m 43s.xml">
+    <history-entry file="All_Tests - 2016.05.01 at 12h 54m 18s.xml">
       <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
-    <history-entry file="All_Tests - 2016.05.01 at 11h 52m 27s.xml">
+    <history-entry file="All_Tests - 2016.05.01 at 12h 55m 07s.xml">
       <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
-    <history-entry file="All_Tests - 2016.05.01 at 11h 55m 42s.xml">
+    <history-entry file="All_Tests - 2016.05.01 at 12h 55m 55s.xml">
       <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
-    <history-entry file="All_Tests - 2016.05.01 at 12h 01m 15s.xml">
+    <history-entry file="All_Tests - 2016.05.01 at 12h 56m 54s.xml">
       <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
-    <history-entry file="All_Tests - 2016.05.01 at 12h 02m 06s.xml">
+    <history-entry file="All_Tests - 2016.05.01 at 12h 57m 43s.xml">
       <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
-    <history-entry file="All_Tests - 2016.05.01 at 12h 04m 49s.xml">
+    <history-entry file="All_Tests - 2016.05.01 at 13h 00m 22s.xml">
       <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
-    <history-entry file="All_Tests - 2016.05.01 at 12h 05m 13s.xml">
+    <history-entry file="All_Tests - 2016.05.01 at 13h 03m 40s.xml">
       <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
-    <history-entry file="All_Tests - 2016.05.01 at 12h 05m 29s.xml">
+    <history-entry file="All_Tests - 2016.05.01 at 13h 04m 04s.xml">
       <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
-    <history-entry file="All_Tests - 2016.05.01 at 12h 07m 37s.xml">
+    <history-entry file="All_Tests - 2016.05.01 at 13h 04m 20s.xml">
       <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
-    <history-entry file="All_Tests - 2016.05.01 at 12h 07m 48s.xml">
+    <history-entry file="All_Tests - 2016.05.01 at 13h 05m 00s.xml">
       <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
   </component>
@@ -799,7 +759,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.50479746" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35064936" sideWeight="0.49520257" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35064936" sideWeight="0.49520257" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16239317" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1113,13 +1073,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/mock_server/MockSpServer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.3333333">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1199,22 +1152,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/SamlEcpClientXHRTest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manualtest/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43956044">
-          <caret line="121" column="52" selection-start-line="121" selection-start-column="52" selection-end-line="121" selection-end-column="52" />
+        <state vertical-scroll-proportion="-5.090909">
+          <caret line="121" column="67" selection-start-line="121" selection-start-column="67" selection-end-line="121" selection-end-column="67" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <marker date="1462070665409" expanded="true" signature="2641:2856" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/mock_server/MockSpServer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="41" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/SamlEcpClientXHRTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54195803">
+          <caret line="303" column="56" selection-start-line="303" selection-start-column="56" selection-end-line="303" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>

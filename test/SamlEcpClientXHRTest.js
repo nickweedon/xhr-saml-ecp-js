@@ -295,5 +295,68 @@ describe('SamlEcpClientXHR Test', function() {
                 }
             );
         });
+
+        it("Will receive correct responses when post multiple times", function (done) {
+
+            var onEcpErrorCallback = sinon.spy();
+            var onErrorCallback = sinon.spy();
+            var onSamlTimeoutCallback = sinon.spy();
+            var onResourceTimeoutCallback = sinon.spy();
+
+            xhrSamlEcpJs.SamlEcpClientXHR.config({
+                options: {
+                    idpEndpointUrl: "http://localhost:3000/idp/profile/SAML2/SOAP/ECP",
+                    username: 'bob',
+                    onEcpAuth: function (authCtx) {
+                        authCtx.setPassword('mysecret');
+                        authCtx.retryAuth();
+                    }
+                },
+                aclList: [{
+                    urlPattern: "^http://localhost:3100/private",
+                    options: {
+                        samlTimeout: 0,
+                        resourceTimeout: 0,
+                        onEcpError: onEcpErrorCallback,
+                        onError: onErrorCallback,
+                        onSamlTimeout: onSamlTimeoutCallback,
+                        onResourceTimeout: onResourceTimeoutCallback
+                    }
+                }]
+            });
+
+            xhrAdaptorJs.manager.injectWrapper(xhrSamlEcpJs.SamlEcpClientXHR);
+
+            $.post("http://localhost:3100/private", {
+                    stuff : "First data!"
+                },
+                function (data) {
+                    assert.equal(data, "Hello World!");
+
+                    $.getJSON("http://localhost:3100/getPostResults", function(data) {
+                        for(var i = 0; i < data.length; i++) {
+                            assert.equal(data[i], "First data!");
+                        }
+                        // Ensure that we are not performing any uneccessary SP posts
+                        assert.equal(data.length, 3);
+
+                        $.post("http://localhost:3100/private", {
+                                stuff : "Second data!"
+                            },
+                            function (data) {
+                                assert.equal(data, "Hello World!");
+
+                                $.getJSON("http://localhost:3100/getPostResults", function(data) {
+                                    assert.equal(data[3], "Second data!");
+                                    // Ensure that we are not performing any uneccessary SP posts
+                                    assert.equal(data.length, 4);
+                                    done();
+                                });
+                            }
+                        );
+                    });
+                }
+            );
+        });
     });
 });
