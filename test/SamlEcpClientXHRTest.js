@@ -238,7 +238,7 @@ describe('SamlEcpClientXHR Test', function() {
                         samlTimeout: 200,
                         resourceTimeout: 200,
                         onEcpError: onEcpErrorCallback,
-                        onError: onErrorCallback,
+                        onError: secondRequest,
                         onSamlTimeout: secondRequest,
                         onResourceTimeout : onResourceTimeoutCallback
                     }
