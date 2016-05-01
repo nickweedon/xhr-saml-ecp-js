@@ -75,7 +75,11 @@ module.exports = function(config) {
     //browsers: ['Firefox'],
     //browsers: ['Chrome'],
 
-
+      client: {
+        mocha: {
+          timeout: 6000 // 6 seconds - upped from 2 seconds
+        }
+      },
 
 
     // Continuous Integration mode
