@@ -124,6 +124,55 @@ describe('SamlEcpClientXHR Test', function() {
             });
         });
 
+        it("Will block and resend after authenticate using get", function (done) {
+
+            var onEcpErrorCallback = sinon.spy();
+            var onErrorCallback = sinon.spy();
+            var onSamlTimeoutCallback = sinon.spy();
+            var onResourceTimeoutCallback = sinon.spy();
+            var firstRequestCallback = sinon.spy();
+            var secondRequestCallback = sinon.spy();
+
+            xhrSamlEcpJs.SamlEcpClientXHR.config({
+                options: {
+                    idpEndpointUrl: "http://localhost:3000/idp/profile/SAML2/SOAP/ECP",
+                    username: 'bob',
+                    onEcpAuth: function (authCtx) {
+                        setTimeout(function () {
+                            authCtx.setPassword('mysecret');
+                            authCtx.retryAuth();
+                        }, 500);
+                    }
+                },
+                aclList: [{
+                    urlPattern: "^http://localhost:3100/private",
+                    options: {
+                        samlTimeout: 0,
+                        resourceTimeout: 0,
+                        onEcpError: onEcpErrorCallback,
+                        onError: onErrorCallback,
+                        onSamlTimeout: onSamlTimeoutCallback,
+                        onResourceTimeout: onResourceTimeoutCallback
+                    }
+                }]
+            });
+
+            xhrAdaptorJs.manager.injectWrapper(xhrSamlEcpJs.SamlEcpClientXHR);
+
+            $.get("http://localhost:3100/private", function (data) {
+                assert.equal(data, "Hello World!");
+                firstRequestCallback();
+                sinon.assert.notCalled(secondRequestCallback);
+                done();
+            });
+
+            $.get("http://localhost:3100/private", function (data) {
+                assert.equal(data, "Hello World!");
+                secondRequestCallback();
+                sinon.assert.calledOnce(firstRequestCallback);
+            });
+        });
+
         it("Can authenticate and post data using post", function (done) {
 
             var onEcpErrorCallback = sinon.spy();

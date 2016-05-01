@@ -10,7 +10,7 @@
 <input type="button" name="login" value="Login" onclick="doLogin()">
 
 
-<div id="errorOutput"></div>
+<div id="errorOutput" style="color:red;padding-top:10px"></div>
 
 <div id="output"></div>
 
@@ -28,8 +28,8 @@
 			aclList: [{
 				urlPattern: "^http://saml-sp.weedon.int",
 				options: {
-					samlTimeout: 0,
-					resourceTimeout: 0,
+					samlTimeout: 2000,
+					resourceTimeout: 2000,
 					onEcpError : function(ecpErrorObj) {
 
                         var errorMsg = "ECP Error: " + JSON.stringify(ecpErrorObj);
@@ -111,8 +111,10 @@
                 success: function(data) {
                     $("#output").html(data);
                 },
-                error: function() {
-                    console.error("Error occurred in ajax resource request");
+                error: function(jqXHR, textStatus, errorThrown) {
+                    var errMsg = "Error occurred when contacting '" + url + "': " + errorThrown;
+                    $("#errorOutput").html(errMsg);
+                    console.error(errMsg);
                 }
             });
 		});

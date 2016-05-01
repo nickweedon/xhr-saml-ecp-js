@@ -16,4 +16,6 @@ Run:
 
 TODO
 ----
-* Add unit tests for all REST methods, push, post, delete etc or at least just POST and check that data is sent
+* Add unit tests for all REST methods, push, post, delete etc or at least just POST and check that data is sent.
+* Add method to de-register authentication URLs.
+

@@ -71,9 +71,11 @@ xhrSamlEcpJs.SamlEcpClientXHR.responseHandler = function(doContinue, xhr) {
 		if(acl.options !== undefined && acl.options.onSuccess !== undefined) {
 			acl.options.onSuccess.apply(this, arguments);
 		}
-		// Unblock the queue and resend the original request
-		doContinue(false);
+		// Resend the original request and unblock the queue
+		xhr.bypassFilter = true;
 		xhr.resend();
+		xhr.bypassFilter = false;
+		doContinue(false);
 	};
 
 	samlClient.auth(xhr.openArgs[0], xhr.responseText, xhr.openArgs[1], xhr.sendArgs[0],

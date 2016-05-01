@@ -139,8 +139,8 @@ module.exports = function(grunt) {
 	grunt.registerTask('compile', ['jshint', 'includereplace', 'copy']);
 	grunt.registerTask('bower-install', ['bower-install-simple']);
 	grunt.event.once('connect.server.listening', function(host, port) {
-		grunt.log.writeln("Unit test pages is available at http://127.0.0.1:" + port +  "/test/unit/");
-		grunt.log.writeln("Manual test page is available at http://127.0.0.1:" + port +  "/test/server/");
+		grunt.log.writeln("Unit test pages is available at http://localhost:" + port +  "/test/unit/");
+		grunt.log.writeln("Manual test page is available at http://localhost:" + port +  "/manualtest/");
 	});
 	grunt.registerTask('test', 'Run the unit test suite', ['bower-install-simple', 'express:idpserver', 'express:spserver', 'karma']);
     grunt.registerTask('startServers', 'Start the mock servers', ['forever:idpserver:restart', 'forever:spserver:restart']);
