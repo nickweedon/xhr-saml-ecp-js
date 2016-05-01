@@ -65,8 +65,8 @@
       <file leaf-file-name="SamlEcpClientXHRTest.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/SamlEcpClientXHRTest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44755244">
-              <caret line="188" column="84" selection-start-line="188" selection-start-column="84" selection-end-line="188" selection-end-column="84" />
+            <state vertical-scroll-proportion="0.3846154">
+              <caret line="251" column="39" selection-start-line="251" selection-start-column="39" selection-end-line="251" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -75,9 +75,19 @@
       <file leaf-file-name="saml-ecp-client-js.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bower_components/saml-ecp-client-js/dist/saml-ecp-client-js.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.660714">
-              <caret line="614" column="30" selection-start-line="614" selection-start-column="30" selection-end-line="614" selection-end-column="30" />
-              <folding />
+            <state vertical-scroll-proportion="-13.089286">
+              <caret line="629" column="30" selection-start-line="629" selection-start-column="30" selection-end-line="629" selection-end-column="30" />
+              <folding>
+                <marker date="1462088311351" expanded="true" signature="12227:12296" placeholder="/** Step 1 - Initiate the initial resource request to the SP ...*/" />
+                <marker date="1462088311351" expanded="true" signature="12358:13350" placeholder="{...}" />
+                <marker date="1462088311351" expanded="true" signature="12596:12681" placeholder="{...}" />
+                <marker date="1462088311351" expanded="true" signature="12739:12933" placeholder="{...}" />
+                <marker date="1462088311351" expanded="true" signature="12808:12900" placeholder="{...}" />
+                <marker date="1462088311351" expanded="true" signature="13305:13350" placeholder="{...}" />
+                <marker date="1462088311351" expanded="true" signature="26379:26383" placeholder="{...}" />
+                <marker date="1462088311351" expanded="true" signature="26379:26386" placeholder="{...}" />
+                <marker date="1462088311351" expanded="true" signature="26379:26665" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -826,12 +836,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Tests - 2016.05.01 at 13h 55m 11s.xml">
-      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
-    <history-entry file="All_Tests - 2016.05.01 at 13h 56m 50s.xml">
-      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
     <history-entry file="All_Tests - 2016.05.01 at 13h 57m 20s.xml">
       <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
@@ -856,6 +860,12 @@
     <history-entry file="All_Tests - 2016.05.01 at 17h 09m 36s.xml">
       <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
+    <history-entry file="All_Tests - 2016.05.01 at 17h 15m 27s.xml">
+      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="All_Tests - 2016.05.01 at 17h 38m 56s.xml">
+      <configuration name="All Tests" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -867,7 +877,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.50479746" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35064936" sideWeight="0.49520257" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35064936" sideWeight="0.49520257" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16239317" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1271,16 +1281,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bower_components/saml-ecp-client-js/dist/saml-ecp-client-js.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.660714">
-          <caret line="614" column="30" selection-start-line="614" selection-start-column="30" selection-end-line="614" selection-end-column="30" />
-          <folding />
+        <state vertical-scroll-proportion="-13.089286">
+          <caret line="629" column="30" selection-start-line="629" selection-start-column="30" selection-end-line="629" selection-end-column="30" />
+          <folding>
+            <marker date="1462088311351" expanded="true" signature="12227:12296" placeholder="/** Step 1 - Initiate the initial resource request to the SP ...*/" />
+            <marker date="1462088311351" expanded="true" signature="12358:13350" placeholder="{...}" />
+            <marker date="1462088311351" expanded="true" signature="12596:12681" placeholder="{...}" />
+            <marker date="1462088311351" expanded="true" signature="12739:12933" placeholder="{...}" />
+            <marker date="1462088311351" expanded="true" signature="12808:12900" placeholder="{...}" />
+            <marker date="1462088311351" expanded="true" signature="13305:13350" placeholder="{...}" />
+            <marker date="1462088311351" expanded="true" signature="26379:26383" placeholder="{...}" />
+            <marker date="1462088311351" expanded="true" signature="26379:26386" placeholder="{...}" />
+            <marker date="1462088311351" expanded="true" signature="26379:26665" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/SamlEcpClientXHRTest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44755244">
-          <caret line="188" column="84" selection-start-line="188" selection-start-column="84" selection-end-line="188" selection-end-column="84" />
+        <state vertical-scroll-proportion="0.3846154">
+          <caret line="251" column="39" selection-start-line="251" selection-start-column="39" selection-end-line="251" selection-end-column="39" />
           <folding />
         </state>
       </provider>

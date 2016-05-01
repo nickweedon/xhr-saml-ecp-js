@@ -186,6 +186,42 @@ describe('SamlEcpClientXHR Test', function() {
             var firstRequestCallback = sinon.spy();
             var secondRequestCallback = sinon.spy();
 
+            // This is the second request, after the first fails/times out.
+            var secondRequest = function() {
+                setTimeout(function() {
+                    xhrSamlEcpJs.SamlEcpClientXHR.config({
+                        options: {
+                            idpEndpointUrl: "http://localhost:3000/idp/profile/SAML2/SOAP/ECP",
+                            username: 'bob',
+                            onEcpAuth: function (authCtx) {
+                                setTimeout(function () {
+                                    authCtx.setPassword('mysecret');
+                                    authCtx.retryAuth();
+                                }, 200);
+                            }
+                        },
+                        aclList: [{
+                            urlPattern: "^http://localhost:3100/private",
+                            options: {
+                                samlTimeout: 0,
+                                resourceTimeout: 0,
+                                onEcpError: onEcpErrorCallback,
+                                onError: onErrorCallback,
+                                onSamlTimeout: onSamlTimeoutCallback,
+                                onResourceTimeout: onResourceTimeoutCallback
+                            }
+                        }]
+                    });
+
+                    $.get("http://localhost:3100/private", function (data) {
+                        assert.equal(data, "Hello World!");
+                        secondRequestCallback();
+                        sinon.assert.notCalled(firstRequestCallback);
+                        done();
+                    });
+                }, 100);
+            };
+
             // NB: Sending data to a unopen port can cause a cross-domain error in some
             // browser/phantomJS implementations. The client currently deals with this special case
             // by emitting a console error and letting the deadline timer expire.
@@ -203,41 +239,7 @@ describe('SamlEcpClientXHR Test', function() {
                         resourceTimeout: 200,
                         onEcpError: onEcpErrorCallback,
                         onError: onErrorCallback,
-                        onSamlTimeout: function() {
-
-                            setTimeout(function() {
-                                xhrSamlEcpJs.SamlEcpClientXHR.config({
-                                    options: {
-                                        idpEndpointUrl: "http://localhost:3000/idp/profile/SAML2/SOAP/ECP",
-                                        username: 'bob',
-                                        onEcpAuth: function (authCtx) {
-                                             setTimeout(function () {
-                                             authCtx.setPassword('mysecret');
-                                             authCtx.retryAuth();
-                                             }, 200);
-                                        }
-                                    },
-                                    aclList: [{
-                                        urlPattern: "^http://localhost:3100/private",
-                                        options: {
-                                            samlTimeout: 0,
-                                            resourceTimeout: 0,
-                                            onEcpError: onEcpErrorCallback,
-                                            onError: onErrorCallback,
-                                            onSamlTimeout: onSamlTimeoutCallback,
-                                            onResourceTimeout: onResourceTimeoutCallback
-                                        }
-                                    }]
-                                });
-
-                                $.get("http://localhost:3100/private", function (data) {
-                                    assert.equal(data, "Hello World!");
-                                    secondRequestCallback();
-                                    sinon.assert.notCalled(firstRequestCallback);
-                                    done();
-                                });
-                            }, 100);
-                        },
+                        onSamlTimeout: secondRequest,
                         onResourceTimeout : onResourceTimeoutCallback
                     }
                 }]
