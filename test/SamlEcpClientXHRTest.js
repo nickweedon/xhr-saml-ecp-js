@@ -20,7 +20,7 @@ describe('SamlEcpClientXHR Test', function() {
                         done();
                     });
                 });
-            }, 1000);
+            }, 100);
         });
     });
 
@@ -179,8 +179,6 @@ describe('SamlEcpClientXHR Test', function() {
 
         it("Will recover and allow sending after error on authenticate using get", function (done) {
 
-            this.timeout(6000);
-
             var onEcpErrorCallback = sinon.spy();
             var onErrorCallback = sinon.spy();
             var onSamlTimeoutCallback = sinon.spy();
@@ -188,6 +186,9 @@ describe('SamlEcpClientXHR Test', function() {
             var firstRequestCallback = sinon.spy();
             var secondRequestCallback = sinon.spy();
 
+            // NB: Sending data to a unopen port can cause a cross-domain error in some
+            // browser/phantomJS implementations. The client currently deals with this special case
+            // by emitting a console error and letting the deadline timer expire.
             xhrSamlEcpJs.SamlEcpClientXHR.config({
                 options: {
                     idpEndpointUrl: "http://localhost:3001/idp/profile/SAML2/SOAP/ECP",
@@ -203,7 +204,6 @@ describe('SamlEcpClientXHR Test', function() {
                         onEcpError: onEcpErrorCallback,
                         onError: onErrorCallback,
                         onSamlTimeout: function() {
-                            console.error("Timeout!!");
 
                             setTimeout(function() {
                                 xhrSamlEcpJs.SamlEcpClientXHR.config({
@@ -212,7 +212,6 @@ describe('SamlEcpClientXHR Test', function() {
                                         username: 'bob',
                                         onEcpAuth: function (authCtx) {
                                              setTimeout(function () {
-                                             console.error("Second PW!!");
                                              authCtx.setPassword('mysecret');
                                              authCtx.retryAuth();
                                              }, 200);
