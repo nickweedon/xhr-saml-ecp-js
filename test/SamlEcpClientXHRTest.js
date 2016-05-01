@@ -192,17 +192,21 @@ describe('SamlEcpClientXHR Test', function() {
                         setTimeout(function () {
                             authCtx.setPassword('mysecret');
                             authCtx.retryAuth();
-                        }, 500);
+                            console.debug("Setting PW!!");
+
+                        }, 200);
                     }
                 },
                 aclList: [{
                     urlPattern: "^http://localhost:3100/private",
                     options: {
-                        samlTimeout: 1000,
-                        resourceTimeout: 1000,
+                        samlTimeout: 200,
+                        resourceTimeout: 200,
                         onEcpError: onEcpErrorCallback,
                         onError: onErrorCallback,
                         onSamlTimeout: function() {
+                            console.debug("Timeout!!");
+
                             xhrSamlEcpJs.SamlEcpClientXHR.config({
                                 options: {
                                     idpEndpointUrl: "http://localhost:3000/idp/profile/SAML2/SOAP/ECP",
