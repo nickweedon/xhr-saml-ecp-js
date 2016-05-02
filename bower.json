@@ -19,7 +19,11 @@
     "xmlHttpRequest"
   ],
   "license": "MIT",
-  "homepage": "xhr-saml-ecp-js.weedon.org.au",
+  "homepage": "http://git.redwyvern.com/SAML/xhr-saml-ecp-js",
+  "repository": {
+    "type": "git",
+    "url": "git://git.redwyvern.com/SAML/xhr-saml-ecp-js"
+  },
   "ignore": [
     ".idea",
     "design",
