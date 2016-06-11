@@ -1,7 +1,7 @@
 {
   "name": "xhr-saml-ecp-js",
   "version": "0.0.1",
-  "description": "Javascript XHR proxy library which provides an easily overridable 'adaptor' class that wraps the underlying XHR object (which may be a COM object on old IE browsers)",
+  "description": "Javascript XHR proxy library which provides seamless SAML ECP based authentication",
   "main": "saml-ecp-js.js",
   "directories": {
     "test": "test"
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@git.weedon.org.au:red-wyvern/xhr-saml-ecp-js.git"
+    "url": "git://github.com/nickweedon/xhr-saml-ecp-js.git"
   },
   "keywords": [
     "saml",
